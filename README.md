@@ -17,10 +17,10 @@ It is tested with the following versions. Add the missing packages to the requir
 Installation
 ============
 
-1. Clone this repo.
-2. pip install -r requirements.txt
-3. python manage.py migrate
-4. python manage.py runserver
+1. Clone this repo `git clone https://github.com/aliminaei/awesome-api.git`
+2. `pip install -r requirements.txt`
+3. `python manage.py migrate`
+4. `python manage.py runserver`
 5. Go to [localhost]
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
