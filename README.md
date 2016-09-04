@@ -7,22 +7,21 @@ Requirements
 
 It is tested with the following versions. Add the missing packages to the requirements.txt of your Django project 
 
-    [Python]
-    [pip]
-    [Django] (1.9.7)
-    [django-filter] (0.13.0)
-    [djangorestframework] (3.4.6)
-    [Markdown] (2.6.6)
+1. [Python]
+2. [pip]
+3. [Django] 1.9.7
+4. [django-filter] 0.13.0
+5. [djangorestframework] 3.4.6
+6. [Markdown] 2.6.6
 
 Installation
 ============
 
-Clone this repo.
-
-    pip install -r requirements.txt
-    python manage.py migrate
-    python manage.py runserver
-    Go to [localhost]
+1. Clone this repo.
+2. pip install -r requirements.txt
+3. python manage.py migrate
+4. python manage.py runserver
+5. Go to [localhost]
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
 [pip]: https://pypi.python.org/pypi/pip "pip"
