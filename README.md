@@ -13,6 +13,7 @@ It is tested with the following versions. Add the missing packages to the requir
 4. [django-filter] ver. 0.13.0
 5. [djangorestframework] ver. 3.4.6
 6. [Markdown] ver. 2.6.6
+7. [gunicorn] ver. 19.6.0
 
 Installation
 ============
@@ -29,4 +30,5 @@ Installation
 [django-filter]: http://django-filter.readthedocs.io/en/latest/usage.html "django-filter"
 [djangorestframework]: http://www.django-rest-framework.org/ "djangorestframework"
 [Markdown]: https://pypi.python.org/pypi/Markdown/ "Markdown"
+[gunicorn]: http://gunicorn.org/ "gunicorn"
 [localhost]: http://127.0.0.1:8000/users/ "http://127.0.0.1:8000/users/"
