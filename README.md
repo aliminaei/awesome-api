@@ -9,10 +9,10 @@ It is tested with the following versions. Add the missing packages to the requir
 
 1. [Python]
 2. [pip]
-3. [Django] 1.9.7
-4. [django-filter] 0.13.0
-5. [djangorestframework] 3.4.6
-6. [Markdown] 2.6.6
+3. [Django] ver. 1.9.7
+4. [django-filter] ver. 0.13.0
+5. [djangorestframework] ver. 3.4.6
+6. [Markdown] ver. 2.6.6
 
 Installation
 ============
