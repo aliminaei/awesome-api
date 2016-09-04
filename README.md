@@ -22,7 +22,7 @@ Clone this repo.
     pip install -r requirements.txt
     python manage.py migrate
     python manage.py runserver
-    Go to [http://127.0.0.1:8000/users/](http://127.0.0.1:8000/users/)
+    Go to [localhost]
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
 [pip]: https://pypi.python.org/pypi/pip "pip"
@@ -30,3 +30,4 @@ Clone this repo.
 [django-filter]: http://django-filter.readthedocs.io/en/latest/usage.html "django-filter"
 [djangorestframework]: http://www.django-rest-framework.org/ "djangorestframework"
 [Markdown]: https://pypi.python.org/pypi/Markdown/ "Markdown"
+[localhost]: http://127.0.0.1:8000/users/ "http://127.0.0.1:8000/users/"
