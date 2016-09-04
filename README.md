@@ -22,7 +22,7 @@ Clone this repo.
     pip install -r requirements.txt
     python manage.py migrate
     python manage.py runserver
-    Go to http://127.0.0.1:8000/users/
+    Go to [http://127.0.0.1:8000/users/](http://127.0.0.1:8000/users/)
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
 [pip]: https://pypi.python.org/pypi/pip "pip"
