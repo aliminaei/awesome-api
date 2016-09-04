@@ -15,12 +15,13 @@ def user_list(request, format=None):
     List all API users, or create a new API user.
     """
     if request.method == 'GET':
-        users = API_User.objects.all()
+        users = APIUser.objects.all()
         serializer = ApiUserSerializer(users, many=True)
         return response.Response(serializer.data)
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
+        print data
         serializer = ApiUserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -34,8 +35,8 @@ def user_detail(request, pk, format=None):
     Retrieve or delete an API user.
     """
     try:
-        user = API_User.objects.get(pk=pk)
-    except API_User.DoesNotExist:
+        user = APIUser.objects.get(pk=pk)
+    except APIUser.DoesNotExist:
         return response.Response(status=404)
 
     if request.method == 'GET':

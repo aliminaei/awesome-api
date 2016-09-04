@@ -1,4 +1,4 @@
 from django.contrib import admin
 from models import *
 
-admin.site.register(API_User)
+admin.site.register(APIUser)
