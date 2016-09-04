@@ -20,7 +20,6 @@ def user_list(request, format=None):
         return response.Response(serializer.data)
 
     elif request.method == 'POST':
-        print request.read()
         data = JSONParser().parse(request)
         serializer = ApiUserSerializer(data=data)
         if serializer.is_valid():
