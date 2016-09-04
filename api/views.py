@@ -1,3 +1,50 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from rest_framework.decorators import api_view, renderer_classes
 
-# Create your views here.
+from rest_framework import response
+
+from models import *
+from serializers import *
+
+
+@csrf_exempt
+@api_view(['GET', 'POST'])
+def user_list(request, format=None):
+    """
+    List all API users, or create a new API user.
+    """
+    if request.method == 'GET':
+        users = API_User.objects.all()
+        serializer = ApiUserSerializer(users, many=True)
+        return response.Response(serializer.data)
+
+    elif request.method == 'POST':
+        print request.read()
+        data = JSONParser().parse(request)
+        serializer = ApiUserSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return response.Response(serializer.data, status=201)
+        return response.Response(serializer.errors, status=400)
+
+@csrf_exempt
+@api_view(['GET', 'DELETE'])
+def user_detail(request, pk, format=None):
+    """
+    Retrieve or delete an API user.
+    """
+    try:
+        user = API_User.objects.get(pk=pk)
+    except API_User.DoesNotExist:
+        return response.Response(status=404)
+
+    if request.method == 'GET':
+        serializer = ApiUserSerializer(user)
+        return response.Response(serializer.data)
+
+    elif request.method == 'DELETE':
+
+        user.delete()
+        return response.Response(status=204)
