@@ -14,6 +14,7 @@ It is tested with the following versions. Add the missing packages to the requir
 5. [djangorestframework] ver. 3.4.6
 6. [Markdown] ver. 2.6.6
 7. [gunicorn] ver. 19.6.0
+8. [whitenoise] ver. 3.2.1
 
 Installation
 ============
@@ -32,3 +33,4 @@ Installation
 [Markdown]: https://pypi.python.org/pypi/Markdown/ "Markdown"
 [gunicorn]: http://gunicorn.org/ "gunicorn"
 [localhost]: http://127.0.0.1:8000/users/ "http://127.0.0.1:8000/users/"
+[whitenoise]: https://pypi.python.org/pypi/whitenoise "whitenoise"

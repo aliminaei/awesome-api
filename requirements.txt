@@ -3,3 +3,5 @@ django-filter==0.13.0
 djangorestframework==3.4.6
 Markdown==2.6.6
 gunicorn==19.6.0
+whitenoise==3.2.1
+
