@@ -3,6 +3,7 @@ from django.contrib import admin
 from api import views
 
 urlpatterns = [
-    url(r'^users/$', views.user_list),
-    url(r'^users/(?P<pk>[0-9]+)/$', views.user_detail),
+    # url('/', views.schema_view),
+    url(r'^users/$', views.ListCreateUserView.as_view()),
+    url(r'^users/(?P<username>[\w-]+)/$', views.UserDetail.as_view()),
 ]

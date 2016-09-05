@@ -2,11 +2,62 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from rest_framework.parsers import JSONParser
+from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, renderer_classes
-from rest_framework import response
+from rest_framework.permissions import AllowAny
+from rest_framework import renderers, response, schemas, generics, status
+from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
+from rest_framework.authentication import *
+import coreapi
 from models import *
 from serializers import *
+
+class ListCreateUserView(generics.ListCreateAPIView):
+    """
+    List all API users, or create a new API user.
+    """
+    permission_classes = (AllowAny,)
+    authentication_classes = ()
+    queryset = APIUser.objects.all()
+    serializer_class = ApiUserSerializer
+    renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
+
+
+class UserDetail(APIView):
+    """
+    Retrieve or delete an API user for the given ID.
+    To delete the API user you have to include your api secret in your request header.
+    """
+
+    renderer_classes = (JSONRenderer, )
+    parser_classes = (JSONParser,)
+
+    def get_object(self, username):
+        try:
+            return APIUser.objects.get(pk=username)
+        except APIUser.DoesNotExist:
+            raise Http404
+
+    def get(self, request, username, format=None):
+        user = self.get_object(username)
+        serializer = ApiUserSerializer(user)
+        return response.Response(serializer.data)
+
+    def delete(self, request, username, format=None):
+        user = self.get_object(username)
+        if 'HTTP_API_SECRET' not in request.META:
+            data = {}
+            data["details"] = "api-secret were not provided."
+            return response.Response(status=401, data=data)
+        if reques.META['HTTP_API_SECRET'] != settings.API_SECRET_KEY:
+            data = {}
+            data["details"] = "Invalid api-secret."
+            return response.Response(status=401, data=data)
+
+        user.delete()
+        return response.Response(status=204)
 
 
 @csrf_exempt
@@ -33,13 +84,13 @@ def user_list(request, format=None):
 @csrf_exempt
 @api_view(['GET', 'DELETE'])
 @renderer_classes([JSONRenderer])
-def user_detail(request, pk, format=None):
+def user_detail(request, username, format=None):
     """
     Retrieve or delete an API user for the given ID.
     To delete the API user you have to include your api secret in your request header.
     """
     try:
-        user = APIUser.objects.get(pk=pk)
+        user = APIUser.objects.get(pk=username)
     except APIUser.DoesNotExist:
         return response.Response(status=404)
 
@@ -59,3 +110,10 @@ def user_detail(request, pk, format=None):
 
         user.delete()
         return response.Response(status=204)
+
+
+@api_view()
+@renderer_classes([SwaggerUIRenderer, OpenAPIRenderer])
+def schema_view(request):
+    generator = schemas.SchemaGenerator(title='Pastebin API')
+    return response.Response(generator.get_schema(request=request))

@@ -3,11 +3,11 @@ from hasher import hash_password
 from django.db import models
 
 class APIUser(models.Model):
-    username             = models.TextField(unique=True)
-    first_name           = models.TextField(null=True)
-    last_name            = models.TextField(null=True)
-    email                = models.TextField()
-    password             = models.TextField()
+    username             = models.CharField(primary_key=True, unique=True, max_length=254)
+    first_name           = models.CharField(null=True, blank=True, max_length=254)
+    last_name            = models.CharField(null=True, blank=True, max_length=254)
+    email                = models.EmailField(max_length=254)
+    password             = models.CharField(max_length=254)
 
     def __str__(self):
         return self.username
