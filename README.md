@@ -39,3 +39,87 @@ Installation
 [whitenoise]: https://pypi.python.org/pypi/whitenoise "whitenoise"
 [drfdocs]: http://drfdocs.com/ "drfdocs"
 [docs]: http://awesome-api.herokuapp.com/docs "docs"
+
+API Usage
+============
+## Create a new API User [POST /api/users/]
+
++ Parameters
+    + username:  (required, unique, string, min length=3, max length=254) - The username of the API user in form of a string. 
+    + email:     (required, string, max length=254) - The email address of the API user in form of a string. 
+    + password   (required, string, min length=3, max length=254) - The password of the API user in form of a string. 
+    + first_name (optional, string, max length=254) - The first name of the API user in form of a string. 
+    + last_name  (optional, string, max length=254) - The last name of the API user in form of a string. 
+
++ Request (application/json)
+    + body
+
+        {
+            "username": "username",
+            "password": "password",
+            "email": "mail@mail.com"
+            "first_name": "fname",
+            "last_name": "lname",
+        }
+
++ Response 201
+
+    + body
+        {
+            "username": "username",
+            "email": "mail@mail.com"
+            "first_name": "fname",
+            "last_name": "lname",
+        }
+
+## Retrive the list of all API Users [GET /api/users/]
+
++ Response 200
+
+    + body
+        [
+            {
+                "username": "username",
+                "email": "mail@mail.com"
+                "first_name": "fname",
+                "last_name": "lname",
+            },
+            {
+                "username": "username2",
+                "email": "mail2@mail.com"
+                "first_name": "fname2",
+                "last_name": "lname2",
+            },
+            {
+                "username": "username3",
+                "email": "mail3@mail.com"
+                "first_name": "fname3",
+                "last_name": "lname3",
+            }
+        ]
+
+## Retrive the details of an API Users [GET /api/users/{username}]
+
++ Path Parameters
+    + username:  (required, unique, string, min length=3, max length=254) - The username of the API user in form of a string. 
+
++ Response 200
+
+    + body
+        {
+            "username": "username",
+            "email": "mail@mail.com"
+            "first_name": "fname",
+            "last_name": "lname",
+        }
+
+## Delete the API Users [DELETE /api/users/{username}]
+
++ Path Parameters
+    + username:  (required, unique, string, min length=3, max length=254) - The username of the API user in form of a string. 
+
++ Header Parameters
+    + API_SECRET:  (required, unique, string, max length=254) - Your api secret. 
+
++ Response 204
+
