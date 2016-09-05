@@ -1,6 +1,6 @@
 # awesome-api
 Awesome API is an example REST API using Django REST framework.
-Try our live interactive [docs].
+Try our live interactive [docs] or [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 
 Requirements
