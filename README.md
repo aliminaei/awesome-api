@@ -35,7 +35,7 @@ Installation
 [djangorestframework]: http://www.django-rest-framework.org/ "djangorestframework"
 [Markdown]: https://pypi.python.org/pypi/Markdown/ "Markdown"
 [gunicorn]: http://gunicorn.org/ "gunicorn"
-[pi docs]: http://127.0.0.1:8080/docs/ "http://127.0.0.1:8080/docs/"
+[api docs]: http://127.0.0.1:8080/docs/ "http://127.0.0.1:8080/docs/"
 [whitenoise]: https://pypi.python.org/pypi/whitenoise "whitenoise"
 [drfdocs]: http://drfdocs.com/ "drfdocs"
 [docs]: http://awesome-api.herokuapp.com/docs "docs"
