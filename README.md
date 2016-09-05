@@ -21,9 +21,10 @@ Installation
 
 1. Clone this repo `git clone https://github.com/aliminaei/awesome-api.git`
 2. `pip install -r requirements.txt`
-3. `python manage.py migrate`
-4. `python manage.py runserver`
-5. Go to [localhost]
+3. `python manage.py collectstatic --noinput`
+4. `python manage.py test`
+5. `python manage.py runserver`
+6. Go to [localhost]
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
 [pip]: https://pypi.python.org/pypi/pip "pip"
