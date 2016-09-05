@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from rest_framework.parsers import JSONParser
+from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework import response
 from models import *
@@ -10,6 +11,7 @@ from serializers import *
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@renderer_classes([JSONRenderer])
 def user_list(request, format=None):
     """
     List all API users, or create a new API user.
@@ -30,9 +32,11 @@ def user_list(request, format=None):
 
 @csrf_exempt
 @api_view(['GET', 'DELETE'])
+@renderer_classes([JSONRenderer])
 def user_detail(request, pk, format=None):
     """
-    Retrieve or delete an API user.
+    Retrieve or delete an API user for the given ID.
+    To delete the API user you have to include your api secret in your request header.
     """
     try:
         user = APIUser.objects.get(pk=pk)
