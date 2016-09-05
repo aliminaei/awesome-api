@@ -1,5 +1,3 @@
-FORMAT: 1A
-
 # awesome-api
 Awesome API is an example REST API using Django REST framework.
 Try our live interactive [docs] or [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
@@ -55,7 +53,7 @@ API Usage
 
 + Request (application/json)
     + Body
-
+        ```js
         {
             "username": "username",
             "password": "password",
@@ -63,22 +61,26 @@ API Usage
             "first_name": "fname",
             "last_name": "lname",
         }
+        ```
 
 + Response 201
 
     + Body
+        ```js
         {
             "username": "username",
             "email": "mail@mail.com"
             "first_name": "fname",
             "last_name": "lname",
         }
+        ```
 
 ## Retrive the list of all API Users [GET /api/users/]
 
 + Response 200
 
     + Body
+        ```js
         [
             {
                 "username": "username",
@@ -99,6 +101,7 @@ API Usage
                 "last_name": "lname3",
             }
         ]
+        ```
 
 ## Retrive the details of an API Users [GET /api/users/{username}]
 
@@ -108,12 +111,14 @@ API Usage
 + Response 200
 
     + Body
+        ```js
         {
             "username": "username",
             "email": "mail@mail.com"
             "first_name": "fname",
             "last_name": "lname",
         }
+        ```
 
 ## Delete the API Users [DELETE /api/users/{username}]
 
