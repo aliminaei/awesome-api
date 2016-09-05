@@ -25,8 +25,8 @@ Installation
 2. `pip install -r requirements.txt`
 3. `python manage.py collectstatic --noinput`
 4. `python manage.py test`
-5. `python manage.py runserver`
-6. Go to [localhost]
+5. `python manage.py runserver 0.0.0.0:8080`
+6. Go to [api docs]
 
 [Python]: https://www.python.org/download/releases/2.7/ "Python 2.7"
 [pip]: https://pypi.python.org/pypi/pip "pip"
@@ -35,7 +35,7 @@ Installation
 [djangorestframework]: http://www.django-rest-framework.org/ "djangorestframework"
 [Markdown]: https://pypi.python.org/pypi/Markdown/ "Markdown"
 [gunicorn]: http://gunicorn.org/ "gunicorn"
-[localhost]: http://127.0.0.1:8000/users/ "http://127.0.0.1:8000/users/"
+[pi docs]: http://127.0.0.1:8080/docs/ "http://127.0.0.1:8080/docs/"
 [whitenoise]: https://pypi.python.org/pypi/whitenoise "whitenoise"
 [drfdocs]: http://drfdocs.com/ "drfdocs"
 [docs]: http://awesome-api.herokuapp.com/docs "docs"
