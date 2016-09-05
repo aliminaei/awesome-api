@@ -1,5 +1,6 @@
 # awesome-api
-Awesome API is an example REST API using Django REST framework
+Awesome API is an example REST API using Django REST framework.
+Try our live interactive [docs].
 
 
 Requirements
@@ -37,3 +38,4 @@ Installation
 [localhost]: http://127.0.0.1:8000/users/ "http://127.0.0.1:8000/users/"
 [whitenoise]: https://pypi.python.org/pypi/whitenoise "whitenoise"
 [drfdocs]: http://drfdocs.com/ "drfdocs"
+[docs]: http://awesome-api.herokuapp.com/docs "docs"
