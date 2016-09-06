@@ -8,7 +8,6 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.permissions import AllowAny
 from rest_framework import renderers, response, schemas, generics, status
 from rest_framework.authentication import *
-import coreapi
 from models import *
 from serializers import *
 
