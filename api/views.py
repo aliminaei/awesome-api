@@ -101,7 +101,7 @@ def user_detail(request, username, format=None):
             data = {}
             data["details"] = "api-secret were not provided."
             return response.Response(status=401, data=data)
-        if reques.META['HTTP_API_SECRET'] != settings.API_SECRET_KEY:
+        if request.META['HTTP_API_SECRET'] != settings.API_SECRET_KEY:
             data = {}
             data["details"] = "Invalid api-secret."
             return response.Response(status=401, data=data)
