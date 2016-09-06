@@ -53,7 +53,7 @@ API Usage
 
 + Request (application/json)
     + Body
-        ```js
+    ```js
         {
             "username": "username",
             "password": "password",
@@ -61,26 +61,26 @@ API Usage
             "first_name": "fname",
             "last_name": "lname",
         }
-        ```
+    ```
 
 + Response 201
 
     + Body
-        ```js
+    ```js
         {
             "username": "username",
             "email": "mail@mail.com"
             "first_name": "fname",
             "last_name": "lname",
         }
-        ```
+    ```
 
 ## Retrive the list of all API Users [GET /api/users/]
 
 + Response 200
 
     + Body
-        ```js
+    ```js
         [
             {
                 "username": "username",
@@ -101,7 +101,7 @@ API Usage
                 "last_name": "lname3",
             }
         ]
-        ```
+    ```
 
 ## Retrive the details of an API Users [GET /api/users/{username}]
 
@@ -111,14 +111,14 @@ API Usage
 + Response 200
 
     + Body
-        ```js
+    ```js
         {
             "username": "username",
             "email": "mail@mail.com"
             "first_name": "fname",
             "last_name": "lname",
         }
-        ```
+    ```
 
 ## Delete the API Users [DELETE /api/users/{username}]
 
