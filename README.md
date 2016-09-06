@@ -129,7 +129,7 @@ API Usage
     + api-secret:  (required, unique, string, max length=254) - Your api secret. 
 
 + Request
-    +Example
+    + Example
     ```
         curl -X DELETE  'http://127.0.0.1:8000/api/users/{username}/'  -H "HTTP_API_SECRET: {api-secret}"
     ```
