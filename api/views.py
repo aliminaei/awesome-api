@@ -49,7 +49,7 @@ class UserDetail(APIView):
             data = {}
             data["details"] = "api-secret were not provided."
             return response.Response(status=401, data=data)
-        if reques.META['HTTP_API_SECRET'] != settings.API_SECRET_KEY:
+        if request.META['HTTP_API_SECRET'] != settings.API_SECRET_KEY:
             data = {}
             data["details"] = "Invalid api-secret."
             return response.Response(status=401, data=data)
@@ -72,7 +72,6 @@ def user_list(request, format=None):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        print data
         serializer = ApiUserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
