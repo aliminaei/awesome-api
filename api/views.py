@@ -7,7 +7,6 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.permissions import AllowAny
 from rest_framework import renderers, response, schemas, generics, status
-from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
 from rest_framework.authentication import *
 import coreapi
 from models import *
@@ -110,10 +109,3 @@ def user_detail(request, username, format=None):
 
         user.delete()
         return response.Response(status=204)
-
-
-@api_view()
-@renderer_classes([SwaggerUIRenderer, OpenAPIRenderer])
-def schema_view(request):
-    generator = schemas.SchemaGenerator(title='Pastebin API')
-    return response.Response(generator.get_schema(request=request))
