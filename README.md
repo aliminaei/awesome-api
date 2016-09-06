@@ -126,7 +126,13 @@ API Usage
     + username:  (required, unique, string, min length=3, max length=254) - The username of the API user in form of a string. 
 
 + Header Parameters
-    + API_SECRET:  (required, unique, string, max length=254) - Your api secret. 
+    + api-secret:  (required, unique, string, max length=254) - Your api secret. 
+
++ Request
+    +Example
+    ```
+        curl -X DELETE  'http://127.0.0.1:8000/api/users/{username}/'  -H "HTTP_API_SECRET: {api-secret}"
+    ```
 
 + Response 204
 
