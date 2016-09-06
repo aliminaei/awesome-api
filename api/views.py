@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.permissions import AllowAny
+from django.http import Http404
 from rest_framework import renderers, response, schemas, generics, status
 from rest_framework.authentication import *
 from models import *
